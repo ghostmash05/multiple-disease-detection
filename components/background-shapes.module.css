@@ -1,0 +1,38 @@
+.container {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(128px);
+  background-color: rgba(79, 70, 229, 0.1);
+}
+
+.shape1 {
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 500px;
+  transform: translate(-50%, -50%);
+}
+
+.shape2 {
+  top: 33%;
+  right: 0;
+  width: 400px;
+  height: 400px;
+  transform: translateX(50%);
+}
+
+.shape3 {
+  bottom: 0;
+  left: 33%;
+  width: 600px;
+  height: 600px;
+  transform: translateY(50%);
+}
+

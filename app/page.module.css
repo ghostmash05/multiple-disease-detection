@@ -1,0 +1,84 @@
+.container {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.header {
+  text-align: center;
+  padding: 2rem 1rem;
+  position: relative;
+  z-index: 10;
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+  color: var(--primary);
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #4f46e5, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: var(--muted-foreground);
+}
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  position: relative;
+  z-index: 10;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.formCard {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.formTitle {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.formDescription {
+  color: var(--muted-foreground);
+  margin-bottom: 1.5rem;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--muted-foreground);
+  position: relative;
+  z-index: 10;
+}
+
+.footerTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
