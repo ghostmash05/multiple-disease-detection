@@ -99,7 +99,6 @@ export default function HealthFormSimple() {
       }
 
       const data = await response.json()
-      // Navigate to the results page with the prediction data
       router.push(`/results?data=${encodeURIComponent(JSON.stringify(data))}`)
     } catch (err) {
       setError(

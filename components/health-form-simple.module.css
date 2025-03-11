@@ -1,20 +1,22 @@
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
 }
 
 .formTitle {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 600;
   color: var(--foreground);
   margin-bottom: 0.5rem;
+  margin-top: -25px;
 }
 
 .formDescription {
   color: var(--muted-foreground);
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  margin-top: -10px;
 }
 
 .section {
@@ -25,7 +27,7 @@
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--primary);
-  margin-bottom: 1rem;
+  margin-bottom: 0.2rem;
 }
 
 .parameterGrid {
@@ -47,6 +49,7 @@
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--foreground);
+  margin-left: 3px;
 }
 
 .unit {

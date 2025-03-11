@@ -13,10 +13,10 @@ export default function Home() {
       <header className={styles.header}>
         <div className={styles.titleContainer}>
           <Activity className={styles.icon} />
-          <h1 className={styles.title}>AI Disease Detection System</h1>
+          <h1 className={styles.title}>Multiple Disease Detection System</h1>
         </div>
         <p className={styles.subtitle}>
-          Advanced AI-powered system for early detection of diseases using machine learning
+          Advanced AI-powered system for early detection of diseases using machine learning algorithms
         </p>
       </header>
 
@@ -35,10 +35,6 @@ export default function Home() {
 
         {/* Health Form */}
         <Card className={styles.formCard}>
-          <h2 className={styles.formTitle}>Health Parameters</h2>
-          <p className={styles.formDescription}>
-            Please enter your medical test results accurately for the best analysis
-          </p>
           <HealthFormSimple />
         </Card>
       </main>

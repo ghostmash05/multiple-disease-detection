@@ -2,10 +2,8 @@ import { NextResponse } from "next/server"
 
 export async function POST(req: Request) {
   try {
-    // Parse the incoming request JSON payload
     const data = await req.json()
 
-    // Forward the request to the Flask app running on localhost:5000
     const flaskResponse = await fetch("http://localhost:5000/predict", {
       method: "POST",
       headers: {
@@ -19,7 +17,6 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: errorResponse.error || "Flask error" }, { status: flaskResponse.status })
     }
 
-    // Return the prediction response from the Flask backend
     const predictionData = await flaskResponse.json()
     return NextResponse.json(predictionData)
   } catch (error) {
