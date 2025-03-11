@@ -13,7 +13,7 @@ export default function Home() {
       <header className={styles.header}>
         <div className={styles.titleContainer}>
           <Activity className={styles.icon} />
-          <h1 className={styles.title}>Multiple Disease Detection System</h1>
+          <h1 className={styles.title}>AI Disease Detection System</h1>
         </div>
         <p className={styles.subtitle}>
           Advanced AI-powered system for early detection of diseases using machine learning

@@ -2,23 +2,28 @@ import { NextResponse } from "next/server"
 
 export async function POST(req: Request) {
   try {
+    // Parse the incoming request JSON payload
     const data = await req.json()
 
-    // Here you would typically:
-    // 1. Load your XGBoost model
-    // 2. Process the input data
-    // 3. Make predictions
-
-    // For now, returning mock response
-    // Replace this with actual model prediction
-    const mockPrediction = Math.random() > 0.5 ? 1 : 0
-    const mockProbability = Math.random()
-
-    return NextResponse.json({
-      prediction: mockPrediction,
-      probability: mockProbability,
+    // Forward the request to the Flask app running on localhost:5000
+    const flaskResponse = await fetch("http://localhost:5000/predict", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
     })
+
+    if (!flaskResponse.ok) {
+      const errorResponse = await flaskResponse.json()
+      return NextResponse.json({ error: errorResponse.error || "Flask error" }, { status: flaskResponse.status })
+    }
+
+    // Return the prediction response from the Flask backend
+    const predictionData = await flaskResponse.json()
+    return NextResponse.json(predictionData)
   } catch (error) {
+    console.error("Error in predict route:", error)
     return NextResponse.json({ error: "Failed to process request" }, { status: 500 })
   }
 }

@@ -1,0 +1,120 @@
+.container {
+  min-height: 100vh;
+  background-color: var(--background);
+  color: var(--foreground);
+  padding: 2rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.backLink {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  color: var(--primary);
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  color: var(--primary);
+}
+
+.main {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.resultSummary {
+  background-color: var(--card);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.summaryTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.summaryText {
+  margin-bottom: 0.5rem;
+}
+
+.highlightedCondition {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.detailedResults {
+  background-color: var(--card);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.detailedTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.probabilityList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.probabilityItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.conditionName {
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.probabilityBar {
+  flex: 2;
+  height: 1rem;
+  background-color: var(--secondary);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.probabilityFill {
+  height: 100%;
+  background-color: var(--primary);
+}
+
+.probabilityValue {
+  flex: 0 0 4rem;
+  text-align: right;
+}
+
+.disclaimer {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  text-align: center;
+}
+
