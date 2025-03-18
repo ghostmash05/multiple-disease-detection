@@ -5,12 +5,36 @@
   padding: 2rem;
 }
 
+.formHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+
 .formTitle {
   font-size: 2rem;
   font-weight: 600;
   color: var(--foreground);
-  margin-bottom: 0.5rem;
   margin-top: -25px;
+}
+
+.demoButton {
+  background-color: var(--secondary);
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.demoButton:hover {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
 }
 
 .formDescription {

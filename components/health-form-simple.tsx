@@ -64,6 +64,11 @@ const parameterGroups = [
   },
 ]
 
+const demoDataNormalized = [
+  0.739596713,	0.650198388,	0.713630986,	0.868491241,	0.687433028,	0.529895399,	0.290005909,	0.631045018,	0.001327858,	0.79582887,	0.034129122,	
+  0.071774199,	0.185595597,	0.07145461,	0.653472376,	0.502664779,	0.215560238,	0.512940563,	0.064187347,	0.61082651,	0.939484854,	0.095511528,	0.465956967,	0.769230075,
+]
+
 export default function HealthFormSimple() {
   const [values, setValues] = useState<HealthParameters>({})
   const [error, setError] = useState<string | null>(null)
@@ -99,6 +104,7 @@ export default function HealthFormSimple() {
       }
 
       const data = await response.json()
+      // Navigate to the results page with the prediction data
       router.push(`/results?data=${encodeURIComponent(JSON.stringify(data))}`)
     } catch (err) {
       setError(
@@ -108,9 +114,104 @@ export default function HealthFormSimple() {
     }
   }
 
+  const loadDemoData = () => {
+    const allParameters = parameterGroups.flatMap((group) => group.parameters)
+    const demoValues: HealthParameters = {}
+
+    allParameters.forEach((param, index) => {
+      if (index < demoDataNormalized.length) {
+        let scaledValue
+        switch (param.id) {
+          case "Glucose":
+            scaledValue = demoDataNormalized[index] 
+            break
+          case "Cholesterol":
+            scaledValue = demoDataNormalized[index]
+            break
+          case "Hemoglobin":
+            scaledValue = demoDataNormalized[index] 
+            break
+          case "Platelets":
+            scaledValue = demoDataNormalized[index] 
+            break
+          case "White Blood Cells":
+            scaledValue = demoDataNormalized[index] 
+            break
+          case "Red Blood Cells":
+            scaledValue = demoDataNormalized[index] 
+            break
+          case "Hematocrit":
+            scaledValue = demoDataNormalized[index] 
+            break
+          case "Mean Corpuscular Volume":
+            scaledValue = demoDataNormalized[index] 
+            break
+          case "Mean Corpuscular Hemoglobin":
+            scaledValue = demoDataNormalized[index] 
+            break
+          case "Mean Corpuscular Hemoglobin Concentration":
+            scaledValue = demoDataNormalized[index]
+            break
+          case "Insulin":
+            scaledValue = demoDataNormalized[index] 
+            break
+          case "BMI":
+            scaledValue = demoDataNormalized[index] 
+            break
+          case "Systolic Blood Pressure":
+            scaledValue = demoDataNormalized[index] 
+            break
+          case "Diastolic Blood Pressure":
+            scaledValue = demoDataNormalized[index] 
+            break
+          case "Triglycerides":
+            scaledValue = demoDataNormalized[index] 
+            break
+          case "HbA1c":
+            scaledValue = demoDataNormalized[index] 
+            break
+          case "LDL Cholesterol":
+            scaledValue = demoDataNormalized[index] 
+            break
+          case "HDL Cholesterol":
+            scaledValue = demoDataNormalized[index] 
+            break
+          case "ALT":
+            scaledValue = demoDataNormalized[index] 
+            break
+          case "AST":
+            scaledValue = demoDataNormalized[index] 
+            break
+          case "Heart Rate":
+            scaledValue = demoDataNormalized[index] 
+            break
+          case "Creatinine":
+            scaledValue = demoDataNormalized[index] 
+            break
+          case "Troponin":
+            scaledValue = demoDataNormalized[index] 
+            break
+          case "C-reactive Protein":
+            scaledValue = demoDataNormalized[index]
+            break
+          default:
+            scaledValue = demoDataNormalized[index] 
+        }
+        demoValues[param.id] = scaledValue;
+      }
+    })
+
+    setValues(demoValues)
+  }
+
   return (
     <div className={styles.container}>
-      <h2 className={styles.formTitle}>Health Parameters</h2>
+      <div className={styles.formHeader}>
+        <h2 className={styles.formTitle}>Health Parameters</h2>
+        <button type="button" onClick={loadDemoData} className={styles.demoButton}>
+          Load Demo Data
+        </button>
+      </div>
       <p className={styles.formDescription}>Please enter your medical test results accurately for the best analysis</p>
 
       <form onSubmit={handleSubmit}>

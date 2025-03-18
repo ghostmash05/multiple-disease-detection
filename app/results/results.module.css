@@ -1,7 +1,7 @@
 .container {
   min-height: 100vh;
   background-color: var(--background);
-  color: var(--foreground);
+  color: var(--secondary);
   padding: 2rem;
 }
 
@@ -10,13 +10,14 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 2rem;
+
 }
 
 .backLink {
   align-self: flex-start;
   display: flex;
   align-items: center;
-  color: var(--primary);
+  color: var(--secondary);
   text-decoration: none;
   margin-bottom: 1rem;
 }
@@ -32,7 +33,7 @@
   font-weight: bold;
   display: flex;
   align-items: center;
-  color: var(--primary);
+  color: var(--secondary-foreground);
 }
 
 .main {
@@ -51,7 +52,7 @@
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  color: var(--primary);
+  color: var(--secondary);
 }
 
 .summaryText {
@@ -61,7 +62,7 @@
 .highlightedCondition {
   font-size: 1.25rem;
   font-weight: bold;
-  color: var(--primary);
+  color: var(--secondary);
 }
 
 .detailedResults {
@@ -75,7 +76,7 @@
   font-size: 1.25rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  color: var(--primary);
+  color: var(--secondary);
 }
 
 .probabilityList {

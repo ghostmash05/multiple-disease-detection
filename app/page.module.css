@@ -22,14 +22,14 @@
 .icon {
   width: 2rem;
   height: 2rem;
-  color: var(--primary);
+  color: var(--card);
   margin-bottom: -45px;
 }
 
 .title {
   font-size: 2.5rem;
   font-weight: bold;
-  background: linear-gradient(to right, #4f46e5, #818cf8);
+  background: linear-gradient(to right, #E4DCCF, #F0EBE3);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: -20px;
